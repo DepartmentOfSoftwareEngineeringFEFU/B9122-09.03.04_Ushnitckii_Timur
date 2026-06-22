@@ -1,0 +1,2342 @@
+[
+  {
+    "id": 1,
+    "name": "Vessel_1",
+    "latitude": 56.544669990214906,
+    "longitude": 167.12215596918122,
+    "sog": 0.3,
+    "cog": 296.6471938001498,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:42.629478"
+  },
+  {
+    "id": 2,
+    "name": "Vessel_2",
+    "latitude": 49.16084153161143,
+    "longitude": 177.4449148589432,
+    "sog": 14.3,
+    "cog": 154.3909656473456,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:42.678964"
+  },
+  {
+    "id": 3,
+    "name": "Vessel_3",
+    "latitude": 58.665572443558986,
+    "longitude": 172.13995779333993,
+    "sog": 10.5,
+    "cog": 225.17541216409128,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:42.896090"
+  },
+  {
+    "id": 4,
+    "name": "Vessel_4",
+    "latitude": 47.966670648696706,
+    "longitude": 156.056579136248,
+    "sog": 19.5,
+    "cog": 291.60377444518673,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:42.978869"
+  },
+  {
+    "id": 5,
+    "name": "Vessel_5",
+    "latitude": 42.65265133022373,
+    "longitude": 166.67982175453494,
+    "sog": 10.9,
+    "cog": 129.62066825574442,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:43.066733"
+  },
+  {
+    "id": 6,
+    "name": "Vessel_6",
+    "latitude": 50.491380836598545,
+    "longitude": 162.55578749319307,
+    "sog": 9.7,
+    "cog": 114.56186994100582,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:43.095795"
+  },
+  {
+    "id": 7,
+    "name": "Vessel_7",
+    "latitude": 43.86425752402253,
+    "longitude": 158.83083937866505,
+    "sog": 14.8,
+    "cog": 253.66996180761484,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:43.145281"
+  },
+  {
+    "id": 8,
+    "name": "Vessel_8",
+    "latitude": 58.54935991403464,
+    "longitude": 143.48549129597203,
+    "sog": 18.6,
+    "cog": 7.7074647171833455,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:43.178053"
+  },
+  {
+    "id": 9,
+    "name": "Vessel_9",
+    "latitude": 59.40055124461469,
+    "longitude": 169.36527949201297,
+    "sog": 6.9,
+    "cog": 78.24992301657748,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:43.228186"
+  },
+  {
+    "id": 10,
+    "name": "Vessel_10",
+    "latitude": 49.63807837928486,
+    "longitude": 167.0935025278099,
+    "sog": 4.2,
+    "cog": 140.5912760367086,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:43.261945"
+  },
+  {
+    "id": 11,
+    "name": "Vessel_11",
+    "latitude": 58.86928277076005,
+    "longitude": 163.380318799877,
+    "sog": 12.6,
+    "cog": 84.82042521008822,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:43.345527"
+  },
+  {
+    "id": 12,
+    "name": "Vessel_12",
+    "latitude": 58.964508481876216,
+    "longitude": 148.07442212575037,
+    "sog": 10.6,
+    "cog": 329.9982486406944,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:43.467177"
+  },
+  {
+    "id": 13,
+    "name": "Vessel_13",
+    "latitude": 45.25956119807069,
+    "longitude": 178.5140974748348,
+    "sog": 14.8,
+    "cog": 353.70302761068336,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:43.507401"
+  },
+  {
+    "id": 14,
+    "name": "Vessel_14",
+    "latitude": 50.15149700594034,
+    "longitude": 173.78524644187468,
+    "sog": 6.3,
+    "cog": 125.16110736666025,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:43.547994"
+  },
+  {
+    "id": 15,
+    "name": "Vessel_15",
+    "latitude": 49.87628284550611,
+    "longitude": 157.21824915471515,
+    "sog": 0.3,
+    "cog": 165.60798080257666,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:43.625658"
+  },
+  {
+    "id": 16,
+    "name": "Vessel_16",
+    "latitude": 47.37836436241304,
+    "longitude": 171.3958318890696,
+    "sog": 8.5,
+    "cog": 148.3136649291593,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:43.664541"
+  },
+  {
+    "id": 17,
+    "name": "Vessel_17",
+    "latitude": 47.01548012683404,
+    "longitude": 169.61491113345502,
+    "sog": 16.8,
+    "cog": 334.5825260295158,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:43.702895"
+  },
+  {
+    "id": 18,
+    "name": "Vessel_18",
+    "latitude": 57.53742537619722,
+    "longitude": 152.27279795157727,
+    "sog": 1.3,
+    "cog": 175.24685362867518,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:43.744165"
+  },
+  {
+    "id": 19,
+    "name": "Vessel_19",
+    "latitude": 59.0524179592296,
+    "longitude": 173.77536314518204,
+    "sog": 0.0,
+    "cog": 249.25680790898107,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:43.827081"
+  },
+  {
+    "id": 20,
+    "name": "Vessel_20",
+    "latitude": 44.80855276013511,
+    "longitude": 167.3888562474506,
+    "sog": 6.6,
+    "cog": 99.39179432773284,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:44.027347"
+  },
+  {
+    "id": 21,
+    "name": "Vessel_21",
+    "latitude": 43.443877203667036,
+    "longitude": 178.06241347894962,
+    "sog": 14.8,
+    "cog": 294.96011506265177,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:44.066509"
+  },
+  {
+    "id": 22,
+    "name": "Vessel_22",
+    "latitude": 56.72172987978571,
+    "longitude": 153.16303422269698,
+    "sog": 18.5,
+    "cog": 173.70292653542822,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:44.105566"
+  },
+  {
+    "id": 23,
+    "name": "Vessel_23",
+    "latitude": 59.294155398114796,
+    "longitude": 175.56903778146054,
+    "sog": 14.2,
+    "cog": 77.29850982195177,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:44.144907"
+  },
+  {
+    "id": 24,
+    "name": "Vessel_24",
+    "latitude": 52.98695229011302,
+    "longitude": 148.4036891841785,
+    "sog": 15.7,
+    "cog": 310.150465265807,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:44.183990"
+  },
+  {
+    "id": 25,
+    "name": "Vessel_25",
+    "latitude": 54.88594892107776,
+    "longitude": 175.62356280023047,
+    "sog": 10.4,
+    "cog": 158.79725729498773,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:44.222391"
+  },
+  {
+    "id": 26,
+    "name": "Vessel_26",
+    "latitude": 57.111313562450725,
+    "longitude": 152.90250529794764,
+    "sog": 8.9,
+    "cog": 307.2484570318207,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:44.261545"
+  },
+  {
+    "id": 27,
+    "name": "Vessel_27",
+    "latitude": 42.74529920621821,
+    "longitude": 164.016007266263,
+    "sog": 2.5,
+    "cog": 100.22504132475501,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:44.342081"
+  },
+  {
+    "id": 28,
+    "name": "Vessel_28",
+    "latitude": 57.31994984581621,
+    "longitude": 166.0241585254025,
+    "sog": 18.0,
+    "cog": 308.3764689701871,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:44.380491"
+  },
+  {
+    "id": 29,
+    "name": "Vessel_29",
+    "latitude": 44.05644595137621,
+    "longitude": 135.79470553472297,
+    "sog": 7.8,
+    "cog": 266.348848506531,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:44.419612"
+  },
+  {
+    "id": 30,
+    "name": "Vessel_30",
+    "latitude": 44.3848114030375,
+    "longitude": 179.11349983229564,
+    "sog": 18.9,
+    "cog": 257.2588607435266,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:44.458102"
+  },
+  {
+    "id": 31,
+    "name": "Vessel_31",
+    "latitude": 55.618170667433546,
+    "longitude": 141.73398220679977,
+    "sog": 2.3,
+    "cog": 355.73260663670294,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:44.656649"
+  },
+  {
+    "id": 32,
+    "name": "Vessel_32",
+    "latitude": 55.34814083005708,
+    "longitude": 172.2239496902307,
+    "sog": 4.0,
+    "cog": 63.843877328597515,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:44.696690"
+  },
+  {
+    "id": 33,
+    "name": "Vessel_33",
+    "latitude": 49.14164454580419,
+    "longitude": 161.5636303491476,
+    "sog": 6.5,
+    "cog": 96.09856637090391,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:44.736339"
+  },
+  {
+    "id": 34,
+    "name": "Vessel_34",
+    "latitude": 54.74038799384049,
+    "longitude": 144.2037468825567,
+    "sog": 19.8,
+    "cog": 136.57689582772124,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:44.781124"
+  },
+  {
+    "id": 35,
+    "name": "Vessel_35",
+    "latitude": 55.554720563406946,
+    "longitude": 151.66709787229334,
+    "sog": 1.0,
+    "cog": 204.10351431070026,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:44.868552"
+  },
+  {
+    "id": 36,
+    "name": "Vessel_36",
+    "latitude": 52.314360279621475,
+    "longitude": 170.69242491528308,
+    "sog": 18.3,
+    "cog": 110.73797191046567,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:44.912379"
+  },
+  {
+    "id": 37,
+    "name": "Vessel_37",
+    "latitude": 54.23268937663194,
+    "longitude": 177.24957468330632,
+    "sog": 11.7,
+    "cog": 128.60012921648547,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:45.121426"
+  },
+  {
+    "id": 38,
+    "name": "Vessel_38",
+    "latitude": 58.81118154585606,
+    "longitude": 167.16596446030414,
+    "sog": 10.6,
+    "cog": 43.06405010192136,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:45.161454"
+  },
+  {
+    "id": 39,
+    "name": "Vessel_39",
+    "latitude": 54.419200448934326,
+    "longitude": 171.3057092194377,
+    "sog": 1.6,
+    "cog": 282.9235707656774,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:45.199391"
+  },
+  {
+    "id": 40,
+    "name": "Vessel_40",
+    "latitude": 47.1660245725655,
+    "longitude": 174.55491629579944,
+    "sog": 7.3,
+    "cog": 41.21436300649236,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:45.237691"
+  },
+  {
+    "id": 41,
+    "name": "Vessel_41",
+    "latitude": 60.25198779054655,
+    "longitude": 166.89386910200102,
+    "sog": 6.1,
+    "cog": 0.353966381935229,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:45.332729"
+  },
+  {
+    "id": 42,
+    "name": "Vessel_42",
+    "latitude": 50.171291195809246,
+    "longitude": 164.28692325967202,
+    "sog": 18.7,
+    "cog": 291.75954810360065,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:45.450971"
+  },
+  {
+    "id": 43,
+    "name": "Vessel_43",
+    "latitude": 51.502101187013466,
+    "longitude": 167.9003488196572,
+    "sog": 12.8,
+    "cog": 116.19017673658044,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:45.491049"
+  },
+  {
+    "id": 44,
+    "name": "Vessel_44",
+    "latitude": 45.51752286963939,
+    "longitude": 178.32943334881548,
+    "sog": 2.6,
+    "cog": 162.92889236769958,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:45.529974"
+  },
+  {
+    "id": 45,
+    "name": "Vessel_45",
+    "latitude": 45.43201706583756,
+    "longitude": 162.8655486817441,
+    "sog": 10.2,
+    "cog": 215.01243691755593,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:45.568004"
+  },
+  {
+    "id": 46,
+    "name": "Vessel_46",
+    "latitude": 48.406815278757776,
+    "longitude": 159.7037719380781,
+    "sog": 3.4,
+    "cog": 35.873545660099424,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:45.607368"
+  },
+  {
+    "id": 47,
+    "name": "Vessel_47",
+    "latitude": 57.772752253095916,
+    "longitude": 154.92324807329604,
+    "sog": 8.1,
+    "cog": 279.66154699200047,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:45.646394"
+  },
+  {
+    "id": 48,
+    "name": "Vessel_48",
+    "latitude": 61.85040991644356,
+    "longitude": 177.40235793008515,
+    "sog": 0.4,
+    "cog": 118.86372671266815,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:45.684788"
+  },
+  {
+    "id": 49,
+    "name": "Vessel_49",
+    "latitude": 42.588476405245395,
+    "longitude": 131.60011358787932,
+    "sog": 14.5,
+    "cog": 280.36408360706224,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:45.725325"
+  },
+  {
+    "id": 50,
+    "name": "Vessel_50",
+    "latitude": 54.64594601774042,
+    "longitude": 169.7523806304334,
+    "sog": 12.4,
+    "cog": 6.489423314826817,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:45.764287"
+  },
+  {
+    "id": 51,
+    "name": "Vessel_51",
+    "latitude": 47.6441428006607,
+    "longitude": 165.6564947702509,
+    "sog": 16.4,
+    "cog": 342.69208980942784,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:45.805316"
+  },
+  {
+    "id": 52,
+    "name": "Vessel_52",
+    "latitude": 51.95813722478388,
+    "longitude": 153.50089205193942,
+    "sog": 11.0,
+    "cog": 278.92571475335365,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:45.884914"
+  },
+  {
+    "id": 53,
+    "name": "Vessel_53",
+    "latitude": 55.75509948148896,
+    "longitude": 137.19872983189606,
+    "sog": 15.3,
+    "cog": 14.242032414040708,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:46.003836"
+  },
+  {
+    "id": 54,
+    "name": "Vessel_54",
+    "latitude": 53.928342653516964,
+    "longitude": 154.03126304878364,
+    "sog": 6.0,
+    "cog": 291.7127347762862,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:46.043304"
+  },
+  {
+    "id": 55,
+    "name": "Vessel_55",
+    "latitude": 48.91962579707003,
+    "longitude": 140.70184465926863,
+    "sog": 12.5,
+    "cog": 195.3220386632164,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:46.120713"
+  },
+  {
+    "id": 56,
+    "name": "Vessel_56",
+    "latitude": 52.89547120602434,
+    "longitude": 152.51798863398605,
+    "sog": 11.2,
+    "cog": 29.573282061897494,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:46.160581"
+  },
+  {
+    "id": 57,
+    "name": "Vessel_57",
+    "latitude": 48.63861085009577,
+    "longitude": 156.07771060342765,
+    "sog": 16.5,
+    "cog": 347.2434531567787,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:46.198471"
+  },
+  {
+    "id": 58,
+    "name": "Vessel_58",
+    "latitude": 43.32653659996525,
+    "longitude": 175.26257351471247,
+    "sog": 10.3,
+    "cog": 109.83186392898841,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:46.236828"
+  },
+  {
+    "id": 59,
+    "name": "Vessel_59",
+    "latitude": 44.768750878758546,
+    "longitude": 177.89261387286635,
+    "sog": 3.3,
+    "cog": 276.8593084556301,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:46.369732"
+  },
+  {
+    "id": 60,
+    "name": "Vessel_60",
+    "latitude": 48.181457314435676,
+    "longitude": 157.70655012219274,
+    "sog": 8.6,
+    "cog": 312.54752716247265,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:46.411170"
+  },
+  {
+    "id": 61,
+    "name": "Vessel_61",
+    "latitude": 54.6058970682169,
+    "longitude": 145.09828317661518,
+    "sog": 2.9,
+    "cog": 171.2149354357481,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:46.450023"
+  },
+  {
+    "id": 62,
+    "name": "Vessel_62",
+    "latitude": 54.08619926251981,
+    "longitude": 151.22626989414965,
+    "sog": 19.7,
+    "cog": 7.627285154090786,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:46.530918"
+  },
+  {
+    "id": 63,
+    "name": "Vessel_63",
+    "latitude": 55.06806166201084,
+    "longitude": 142.32370717694658,
+    "sog": 1.3,
+    "cog": 258.9909678349503,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:46.568723"
+  },
+  {
+    "id": 64,
+    "name": "Vessel_64",
+    "latitude": 61.50082363241255,
+    "longitude": 173.63342964266096,
+    "sog": 4.5,
+    "cog": 172.2111435202114,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:46.607235"
+  },
+  {
+    "id": 65,
+    "name": "Vessel_65",
+    "latitude": 45.75801490666719,
+    "longitude": 172.93484468234237,
+    "sog": 12.2,
+    "cog": 87.40691904981085,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:46.646472"
+  },
+  {
+    "id": 66,
+    "name": "Vessel_66",
+    "latitude": 48.96417903590888,
+    "longitude": 158.94576298571164,
+    "sog": 19.9,
+    "cog": 216.38731885474994,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:46.719017"
+  },
+  {
+    "id": 67,
+    "name": "Vessel_67",
+    "latitude": 56.20938899689707,
+    "longitude": 138.5432915112723,
+    "sog": 5.2,
+    "cog": 341.5163862000782,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:46.797443"
+  },
+  {
+    "id": 68,
+    "name": "Vessel_68",
+    "latitude": 48.346647806202384,
+    "longitude": 140.94470165612236,
+    "sog": 9.5,
+    "cog": 313.8246729065938,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:46.834096"
+  },
+  {
+    "id": 69,
+    "name": "Vessel_69",
+    "latitude": 52.14186460172416,
+    "longitude": 172.22185973757956,
+    "sog": 0.8,
+    "cog": 95.08228062106203,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:46.947386"
+  },
+  {
+    "id": 70,
+    "name": "Vessel_70",
+    "latitude": 49.088992465211106,
+    "longitude": 178.6457024307761,
+    "sog": 13.9,
+    "cog": 56.440900237781804,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:47.022365"
+  },
+  {
+    "id": 71,
+    "name": "Vessel_71",
+    "latitude": 46.253231062045124,
+    "longitude": 160.8368222751255,
+    "sog": 16.4,
+    "cog": 88.88006960033307,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:47.099164"
+  },
+  {
+    "id": 72,
+    "name": "Vessel_72",
+    "latitude": 50.81619348417768,
+    "longitude": 177.51278907276912,
+    "sog": 17.4,
+    "cog": 144.02832047633242,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:47.137209"
+  },
+  {
+    "id": 73,
+    "name": "Vessel_73",
+    "latitude": 52.36047136857852,
+    "longitude": 174.2672929811646,
+    "sog": 3.7,
+    "cog": 237.66425271056295,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:47.213909"
+  },
+  {
+    "id": 74,
+    "name": "Vessel_74",
+    "latitude": 53.83710175474973,
+    "longitude": 166.2347677657696,
+    "sog": 3.9,
+    "cog": 313.56121869645676,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:47.325013"
+  },
+  {
+    "id": 75,
+    "name": "Vessel_75",
+    "latitude": 48.1077055328691,
+    "longitude": 178.03898366504632,
+    "sog": 17.2,
+    "cog": 1.2011684371106135,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:47.402666"
+  },
+  {
+    "id": 76,
+    "name": "Vessel_76",
+    "latitude": 55.22898639804986,
+    "longitude": 178.49895577765264,
+    "sog": 0.8,
+    "cog": 125.1016817564344,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:47.516425"
+  },
+  {
+    "id": 77,
+    "name": "Vessel_77",
+    "latitude": 46.62871956138763,
+    "longitude": 173.0514987464626,
+    "sog": 6.9,
+    "cog": 184.7533053095231,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:47.590520"
+  },
+  {
+    "id": 78,
+    "name": "Vessel_78",
+    "latitude": 55.023099151097455,
+    "longitude": 168.3299889363604,
+    "sog": 19.0,
+    "cog": 284.29211399294417,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:47.628969"
+  },
+  {
+    "id": 79,
+    "name": "Vessel_79",
+    "latitude": 44.43453568323719,
+    "longitude": 137.82915209186865,
+    "sog": 9.4,
+    "cog": 25.72622811464976,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:47.702235"
+  },
+  {
+    "id": 80,
+    "name": "Vessel_80",
+    "latitude": 47.952927545921554,
+    "longitude": 161.85765535512743,
+    "sog": 9.2,
+    "cog": 178.78478746898088,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:47.739193"
+  },
+  {
+    "id": 81,
+    "name": "Vessel_81",
+    "latitude": 46.67106984847609,
+    "longitude": 176.79363138415619,
+    "sog": 16.1,
+    "cog": 9.913591459412,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:47.889947"
+  },
+  {
+    "id": 82,
+    "name": "Vessel_82",
+    "latitude": 55.57980976252515,
+    "longitude": 169.63741959194454,
+    "sog": 13.7,
+    "cog": 330.9521820931535,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:48.007200"
+  },
+  {
+    "id": 83,
+    "name": "Vessel_83",
+    "latitude": 54.8802990479578,
+    "longitude": 147.40517459831256,
+    "sog": 0.6,
+    "cog": 116.67326467021735,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:48.087670"
+  },
+  {
+    "id": 84,
+    "name": "Vessel_84",
+    "latitude": 43.823848790872084,
+    "longitude": 162.0580963620097,
+    "sog": 19.7,
+    "cog": 79.68419127665403,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:48.162999"
+  },
+  {
+    "id": 85,
+    "name": "Vessel_85",
+    "latitude": 52.27720561654901,
+    "longitude": 149.1346173752039,
+    "sog": 14.5,
+    "cog": 316.29884898666154,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:48.306948"
+  },
+  {
+    "id": 86,
+    "name": "Vessel_86",
+    "latitude": 43.455092074935145,
+    "longitude": 177.20802074724344,
+    "sog": 18.6,
+    "cog": 50.438972260922625,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:48.380452"
+  },
+  {
+    "id": 87,
+    "name": "Vessel_87",
+    "latitude": 45.210401089089274,
+    "longitude": 157.24409169446218,
+    "sog": 12.1,
+    "cog": 22.052653980852973,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:48.454976"
+  },
+  {
+    "id": 88,
+    "name": "Vessel_88",
+    "latitude": 44.276148209813535,
+    "longitude": 172.57555223518486,
+    "sog": 5.5,
+    "cog": 43.21902745462909,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:48.601981"
+  },
+  {
+    "id": 89,
+    "name": "Vessel_89",
+    "latitude": 58.39479314181163,
+    "longitude": 171.36601414417893,
+    "sog": 0.5,
+    "cog": 31.109502293063585,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:48.712837"
+  },
+  {
+    "id": 90,
+    "name": "Vessel_90",
+    "latitude": 48.41249797712353,
+    "longitude": 163.80656670117935,
+    "sog": 15.5,
+    "cog": 11.358277332614461,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:48.787332"
+  },
+  {
+    "id": 91,
+    "name": "Vessel_91",
+    "latitude": 53.49230086624652,
+    "longitude": 169.3988565498361,
+    "sog": 7.1,
+    "cog": 28.961566518159707,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:48.826003"
+  },
+  {
+    "id": 92,
+    "name": "Vessel_92",
+    "latitude": 57.400011263983025,
+    "longitude": 140.26118705602352,
+    "sog": 16.4,
+    "cog": 46.97747043884408,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:48.939166"
+  },
+  {
+    "id": 93,
+    "name": "Vessel_93",
+    "latitude": 55.4093360605719,
+    "longitude": 149.10749024842906,
+    "sog": 1.2,
+    "cog": 114.08026331815056,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:49.016657"
+  },
+  {
+    "id": 94,
+    "name": "Vessel_94",
+    "latitude": 43.441440160330366,
+    "longitude": 169.98452257330018,
+    "sog": 18.7,
+    "cog": 276.6072357310356,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:49.092864"
+  },
+  {
+    "id": 95,
+    "name": "Vessel_95",
+    "latitude": 48.27900376036314,
+    "longitude": 174.58011864538133,
+    "sog": 3.1,
+    "cog": 339.7891738909252,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:49.242578"
+  },
+  {
+    "id": 96,
+    "name": "Vessel_96",
+    "latitude": 53.70772761756711,
+    "longitude": 170.2990114300242,
+    "sog": 16.1,
+    "cog": 247.69953343648308,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:49.279347"
+  },
+  {
+    "id": 97,
+    "name": "Vessel_97",
+    "latitude": 53.28138551032391,
+    "longitude": 149.35684889121586,
+    "sog": 15.9,
+    "cog": 10.0645417134016,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:49.318771"
+  },
+  {
+    "id": 98,
+    "name": "Vessel_98",
+    "latitude": 43.011412472331024,
+    "longitude": 169.18094253683688,
+    "sog": 19.0,
+    "cog": 320.3641244275039,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:49.376776"
+  },
+  {
+    "id": 99,
+    "name": "Vessel_99",
+    "latitude": 44.99166115343607,
+    "longitude": 175.63336277362072,
+    "sog": 3.2,
+    "cog": 168.95319199665363,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:49.430605"
+  },
+  {
+    "id": 100,
+    "name": "Vessel_100",
+    "latitude": 53.99104850312455,
+    "longitude": 168.57067594695513,
+    "sog": 4.8,
+    "cog": 72.74027562812248,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:49.470199"
+  },
+  {
+    "id": 101,
+    "name": "Vessel_101",
+    "latitude": 42.76222710526388,
+    "longitude": 164.96779741448753,
+    "sog": 4.9,
+    "cog": 81.98305359357558,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:49.510984"
+  },
+  {
+    "id": 102,
+    "name": "Vessel_102",
+    "latitude": 57.980034690393,
+    "longitude": 171.23205127185213,
+    "sog": 5.4,
+    "cog": 119.00292852265723,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:49.549472"
+  },
+  {
+    "id": 103,
+    "name": "Vessel_103",
+    "latitude": 55.75763527575052,
+    "longitude": 153.62165314963474,
+    "sog": 9.5,
+    "cog": 328.11936615664536,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:49.586607"
+  },
+  {
+    "id": 104,
+    "name": "Vessel_104",
+    "latitude": 55.72422649088706,
+    "longitude": 145.01812161986814,
+    "sog": 18.2,
+    "cog": 205.72135596791318,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:49.662322"
+  },
+  {
+    "id": 105,
+    "name": "Vessel_105",
+    "latitude": 55.602690896369204,
+    "longitude": 167.2436935310558,
+    "sog": 9.4,
+    "cog": 171.7679911863289,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:49.734238"
+  },
+  {
+    "id": 106,
+    "name": "Vessel_106",
+    "latitude": 47.124921040812055,
+    "longitude": 176.53831078477094,
+    "sog": 16.7,
+    "cog": 166.96911833975176,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:49.771571"
+  },
+  {
+    "id": 107,
+    "name": "Vessel_107",
+    "latitude": 47.34823094446759,
+    "longitude": 156.56056940763116,
+    "sog": 5.1,
+    "cog": 209.5346710439229,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:49.818640"
+  },
+  {
+    "id": 108,
+    "name": "Vessel_108",
+    "latitude": 50.49342459079513,
+    "longitude": 174.4733835965073,
+    "sog": 10.8,
+    "cog": 237.60742872729716,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:49.868000"
+  },
+  {
+    "id": 109,
+    "name": "Vessel_109",
+    "latitude": 44.718963390954265,
+    "longitude": 178.0358931948151,
+    "sog": 9.9,
+    "cog": 58.00727585643278,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:49.948283"
+  },
+  {
+    "id": 110,
+    "name": "Vessel_110",
+    "latitude": 45.95203189838044,
+    "longitude": 166.4680098852474,
+    "sog": 16.1,
+    "cog": 210.86296819055738,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:50.048424"
+  },
+  {
+    "id": 111,
+    "name": "Vessel_111",
+    "latitude": 52.026499279066,
+    "longitude": 165.7028355537617,
+    "sog": 15.3,
+    "cog": 34.081147162138045,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:50.177680"
+  },
+  {
+    "id": 112,
+    "name": "Vessel_112",
+    "latitude": 47.45505297586695,
+    "longitude": 179.2663979795293,
+    "sog": 19.8,
+    "cog": 162.24109593965068,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:50.216582"
+  },
+  {
+    "id": 113,
+    "name": "Vessel_113",
+    "latitude": 56.92939341260663,
+    "longitude": 168.49007030645373,
+    "sog": 9.8,
+    "cog": 265.258003233805,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:50.253841"
+  },
+  {
+    "id": 114,
+    "name": "Vessel_114",
+    "latitude": 47.151970362248875,
+    "longitude": 170.95625512218254,
+    "sog": 7.6,
+    "cog": 9.562568977141295,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:50.295345"
+  },
+  {
+    "id": 115,
+    "name": "Vessel_115",
+    "latitude": 52.75514283036251,
+    "longitude": 147.42419987495236,
+    "sog": 4.9,
+    "cog": 93.50015216344123,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:50.380719"
+  },
+  {
+    "id": 116,
+    "name": "Vessel_116",
+    "latitude": 54.74512846041608,
+    "longitude": 142.09720032254467,
+    "sog": 13.9,
+    "cog": 317.45875171627097,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:50.431589"
+  },
+  {
+    "id": 117,
+    "name": "Vessel_117",
+    "latitude": 55.08733905418606,
+    "longitude": 144.95502140175452,
+    "sog": 10.3,
+    "cog": 8.00468747194401,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:50.486905"
+  },
+  {
+    "id": 118,
+    "name": "Vessel_118",
+    "latitude": 54.04685825093112,
+    "longitude": 165.10748647822572,
+    "sog": 15.4,
+    "cog": 151.50310548078488,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:50.574623"
+  },
+  {
+    "id": 119,
+    "name": "Vessel_119",
+    "latitude": 59.737433585952495,
+    "longitude": 171.2735206652039,
+    "sog": 8.1,
+    "cog": 340.73501707741286,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:50.617094"
+  },
+  {
+    "id": 120,
+    "name": "Vessel_120",
+    "latitude": 61.53082822379198,
+    "longitude": 178.5639973387122,
+    "sog": 12.4,
+    "cog": 143.3281436695839,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:50.657217"
+  },
+  {
+    "id": 121,
+    "name": "Vessel_121",
+    "latitude": 44.096734665144744,
+    "longitude": 162.67848736897685,
+    "sog": 18.1,
+    "cog": 14.288368926112899,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:50.696350"
+  },
+  {
+    "id": 122,
+    "name": "Vessel_122",
+    "latitude": 57.95629170389402,
+    "longitude": 150.9785447146015,
+    "sog": 7.1,
+    "cog": 265.21916777676483,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:50.775035"
+  },
+  {
+    "id": 123,
+    "name": "Vessel_123",
+    "latitude": 62.79954452318794,
+    "longitude": 179.74133476469046,
+    "sog": 1.1,
+    "cog": 320.00522245399026,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:50.815088"
+  },
+  {
+    "id": 124,
+    "name": "Vessel_124",
+    "latitude": 58.198686975885906,
+    "longitude": 166.6496402674756,
+    "sog": 3.6,
+    "cog": 278.250300718558,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:50.853709"
+  },
+  {
+    "id": 125,
+    "name": "Vessel_125",
+    "latitude": 58.49701888539028,
+    "longitude": 165.14468155601992,
+    "sog": 1.1,
+    "cog": 98.90253280556715,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:51.006727"
+  },
+  {
+    "id": 126,
+    "name": "Vessel_126",
+    "latitude": 43.77797469807207,
+    "longitude": 135.86007437232627,
+    "sog": 7.3,
+    "cog": 287.6191508510315,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:51.043246"
+  },
+  {
+    "id": 127,
+    "name": "Vessel_127",
+    "latitude": 48.019827292618565,
+    "longitude": 176.0863160220024,
+    "sog": 4.5,
+    "cog": 20.791150050859212,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:51.080879"
+  },
+  {
+    "id": 128,
+    "name": "Vessel_128",
+    "latitude": 43.34085731483994,
+    "longitude": 139.62045803526192,
+    "sog": 12.9,
+    "cog": 250.0534208439519,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:51.215318"
+  },
+  {
+    "id": 129,
+    "name": "Vessel_129",
+    "latitude": 46.319220066537554,
+    "longitude": 175.43821178033215,
+    "sog": 19.4,
+    "cog": 319.1371086659629,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:51.295630"
+  },
+  {
+    "id": 130,
+    "name": "Vessel_130",
+    "latitude": 59.523046907200936,
+    "longitude": 149.21320636812635,
+    "sog": 5.1,
+    "cog": 100.36253037188135,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:51.333295"
+  },
+  {
+    "id": 131,
+    "name": "Vessel_131",
+    "latitude": 61.854817519830114,
+    "longitude": 176.82081953605788,
+    "sog": 18.6,
+    "cog": 96.17269125996857,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:51.373052"
+  },
+  {
+    "id": 132,
+    "name": "Vessel_132",
+    "latitude": 49.072956551810705,
+    "longitude": 164.65921371227626,
+    "sog": 13.7,
+    "cog": 219.0291414305281,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:51.411686"
+  },
+  {
+    "id": 133,
+    "name": "Vessel_133",
+    "latitude": 51.908501399789905,
+    "longitude": 172.42608399011635,
+    "sog": 11.5,
+    "cog": 208.28315881512182,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:51.447192"
+  },
+  {
+    "id": 134,
+    "name": "Vessel_134",
+    "latitude": 56.55550480748822,
+    "longitude": 178.186670068377,
+    "sog": 15.4,
+    "cog": 329.14097683302685,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:51.485311"
+  },
+  {
+    "id": 135,
+    "name": "Vessel_135",
+    "latitude": 53.246088443769374,
+    "longitude": 172.38826376008674,
+    "sog": 7.6,
+    "cog": 257.4307219967409,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:51.524843"
+  },
+  {
+    "id": 136,
+    "name": "Vessel_136",
+    "latitude": 57.77425801317824,
+    "longitude": 169.58716998259246,
+    "sog": 2.4,
+    "cog": 199.43667096563374,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:51.662751"
+  },
+  {
+    "id": 137,
+    "name": "Vessel_137",
+    "latitude": 43.594035545324175,
+    "longitude": 170.12865191520913,
+    "sog": 2.6,
+    "cog": 254.5398988074678,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:51.711760"
+  },
+  {
+    "id": 138,
+    "name": "Vessel_138",
+    "latitude": 44.80605658488709,
+    "longitude": 159.21373179715076,
+    "sog": 14.9,
+    "cog": 333.2138931676183,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:51.752975"
+  },
+  {
+    "id": 139,
+    "name": "Vessel_139",
+    "latitude": 54.162111239596754,
+    "longitude": 166.82823974400554,
+    "sog": 10.7,
+    "cog": 260.4229438759996,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:51.791108"
+  },
+  {
+    "id": 140,
+    "name": "Vessel_140",
+    "latitude": 50.54457437807947,
+    "longitude": 177.83681075206866,
+    "sog": 2.2,
+    "cog": 222.27217599329126,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:51.827642"
+  },
+  {
+    "id": 141,
+    "name": "Vessel_141",
+    "latitude": 53.42196711640937,
+    "longitude": 175.17542491940645,
+    "sog": 6.0,
+    "cog": 143.2608096520192,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:51.978870"
+  },
+  {
+    "id": 142,
+    "name": "Vessel_142",
+    "latitude": 55.45717593170745,
+    "longitude": 137.3044771679456,
+    "sog": 9.5,
+    "cog": 0.6703958388095232,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:52.207943"
+  },
+  {
+    "id": 143,
+    "name": "Vessel_143",
+    "latitude": 59.537225961963955,
+    "longitude": 172.43985798001415,
+    "sog": 13.7,
+    "cog": 76.81624388930415,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:52.319234"
+  },
+  {
+    "id": 144,
+    "name": "Vessel_144",
+    "latitude": 54.674468579218875,
+    "longitude": 179.34113982658602,
+    "sog": 1.0,
+    "cog": 170.61088263635008,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:52.358344"
+  },
+  {
+    "id": 145,
+    "name": "Vessel_145",
+    "latitude": 50.998005655834675,
+    "longitude": 158.9257673235398,
+    "sog": 8.3,
+    "cog": 287.30527395566554,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:52.397247"
+  },
+  {
+    "id": 146,
+    "name": "Vessel_146",
+    "latitude": 46.62093389824983,
+    "longitude": 160.08840961714003,
+    "sog": 2.2,
+    "cog": 51.19512395064061,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:52.435488"
+  },
+  {
+    "id": 147,
+    "name": "Vessel_147",
+    "latitude": 58.41214706777444,
+    "longitude": 173.28152840114345,
+    "sog": 1.3,
+    "cog": 73.25116081070958,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:52.474354"
+  },
+  {
+    "id": 148,
+    "name": "Vessel_148",
+    "latitude": 42.80539298379771,
+    "longitude": 157.34959684095952,
+    "sog": 13.8,
+    "cog": 279.0575374134349,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:52.511784"
+  },
+  {
+    "id": 149,
+    "name": "Vessel_149",
+    "latitude": 47.76289363176039,
+    "longitude": 163.686915116292,
+    "sog": 9.9,
+    "cog": 267.1103855780878,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:52.547573"
+  },
+  {
+    "id": 150,
+    "name": "Vessel_150",
+    "latitude": 55.60089917846662,
+    "longitude": 154.00655979241188,
+    "sog": 9.4,
+    "cog": 248.5372368158431,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:52.622901"
+  },
+  {
+    "id": 151,
+    "name": "Vessel_151",
+    "latitude": 42.74136752159853,
+    "longitude": 150.43323223072872,
+    "sog": 2.8,
+    "cog": 264.2478239500717,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:52.747062"
+  },
+  {
+    "id": 152,
+    "name": "Vessel_152",
+    "latitude": 49.458598520634126,
+    "longitude": 178.2335361516202,
+    "sog": 19.9,
+    "cog": 244.94632342326645,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:52.793946"
+  },
+  {
+    "id": 153,
+    "name": "Vessel_153",
+    "latitude": 46.83598317479988,
+    "longitude": 166.28754672528848,
+    "sog": 3.4,
+    "cog": 110.58878101063243,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:52.876553"
+  },
+  {
+    "id": 154,
+    "name": "Vessel_154",
+    "latitude": 58.01553851755547,
+    "longitude": 178.60827446754544,
+    "sog": 5.8,
+    "cog": 105.16880977428228,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:52.954269"
+  },
+  {
+    "id": 155,
+    "name": "Vessel_155",
+    "latitude": 55.19302716253537,
+    "longitude": 164.10294701141703,
+    "sog": 19.8,
+    "cog": 41.27772109052804,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:53.034038"
+  },
+  {
+    "id": 156,
+    "name": "Vessel_156",
+    "latitude": 53.27437731004071,
+    "longitude": 165.07654796997846,
+    "sog": 14.7,
+    "cog": 144.88825246797393,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:53.107849"
+  },
+  {
+    "id": 157,
+    "name": "Vessel_157",
+    "latitude": 56.02035636411831,
+    "longitude": 165.69317816497895,
+    "sog": 2.1,
+    "cog": 299.5579202602757,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:53.180952"
+  },
+  {
+    "id": 158,
+    "name": "Vessel_158",
+    "latitude": 46.08778506068369,
+    "longitude": 167.92660958220958,
+    "sog": 5.4,
+    "cog": 278.04698158834253,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:53.256628"
+  },
+  {
+    "id": 159,
+    "name": "Vessel_159",
+    "latitude": 54.886322470315186,
+    "longitude": 143.0642063121112,
+    "sog": 18.1,
+    "cog": 166.8389565069679,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:53.296249"
+  },
+  {
+    "id": 160,
+    "name": "Vessel_160",
+    "latitude": 43.24109033939518,
+    "longitude": 176.2333421883283,
+    "sog": 1.5,
+    "cog": 279.90255838876215,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:53.374896"
+  },
+  {
+    "id": 161,
+    "name": "Vessel_161",
+    "latitude": 42.717001629660295,
+    "longitude": 168.453872080123,
+    "sog": 18.6,
+    "cog": 309.79698550954777,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:53.414603"
+  },
+  {
+    "id": 162,
+    "name": "Vessel_162",
+    "latitude": 53.78024598020602,
+    "longitude": 167.58256056947852,
+    "sog": 19.5,
+    "cog": 53.566750049060985,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:53.453349"
+  },
+  {
+    "id": 163,
+    "name": "Vessel_163",
+    "latitude": 47.456298078149686,
+    "longitude": 175.7148144072025,
+    "sog": 10.2,
+    "cog": 237.96045419302297,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:53.491268"
+  },
+  {
+    "id": 164,
+    "name": "Vessel_164",
+    "latitude": 47.95195816572548,
+    "longitude": 169.7969618870056,
+    "sog": 0.3,
+    "cog": 328.1592957860733,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:53.602231"
+  },
+  {
+    "id": 165,
+    "name": "Vessel_165",
+    "latitude": 45.02171925159108,
+    "longitude": 173.0271127949907,
+    "sog": 18.1,
+    "cog": 330.9199074520389,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:53.640264"
+  },
+  {
+    "id": 166,
+    "name": "Vessel_166",
+    "latitude": 56.86253913412873,
+    "longitude": 171.48111077872926,
+    "sog": 12.9,
+    "cog": 146.2867824741818,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:53.757497"
+  },
+  {
+    "id": 167,
+    "name": "Vessel_167",
+    "latitude": 57.76839326491972,
+    "longitude": 175.6082128610629,
+    "sog": 4.1,
+    "cog": 251.65149200280203,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:53.798498"
+  },
+  {
+    "id": 168,
+    "name": "Vessel_168",
+    "latitude": 59.46961164596078,
+    "longitude": 179.72010916427843,
+    "sog": 3.2,
+    "cog": 4.925946193958275,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:53.880674"
+  },
+  {
+    "id": 169,
+    "name": "Vessel_169",
+    "latitude": 42.683050601179986,
+    "longitude": 176.8546166283771,
+    "sog": 17.2,
+    "cog": 118.42761897105207,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:54.006441"
+  },
+  {
+    "id": 170,
+    "name": "Vessel_170",
+    "latitude": 43.29125705526116,
+    "longitude": 178.92436690082886,
+    "sog": 9.0,
+    "cog": 244.48455331472815,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:54.118109"
+  },
+  {
+    "id": 171,
+    "name": "Vessel_171",
+    "latitude": 51.50116448991474,
+    "longitude": 151.4997626813911,
+    "sog": 4.9,
+    "cog": 102.49712983695217,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:54.155350"
+  },
+  {
+    "id": 172,
+    "name": "Vessel_172",
+    "latitude": 57.20201089003483,
+    "longitude": 171.19546437671318,
+    "sog": 4.8,
+    "cog": 93.49465399675934,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:54.192116"
+  },
+  {
+    "id": 173,
+    "name": "Vessel_173",
+    "latitude": 43.80799718311428,
+    "longitude": 171.10010201634668,
+    "sog": 7.9,
+    "cog": 152.9967999701602,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:54.230328"
+  },
+  {
+    "id": 174,
+    "name": "Vessel_174",
+    "latitude": 58.26289034420767,
+    "longitude": 171.13986819681244,
+    "sog": 18.2,
+    "cog": 191.1307690805567,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:54.389235"
+  },
+  {
+    "id": 175,
+    "name": "Vessel_175",
+    "latitude": 44.598182305426036,
+    "longitude": 166.61504620238367,
+    "sog": 5.8,
+    "cog": 93.73795645848192,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:54.429163"
+  },
+  {
+    "id": 176,
+    "name": "Vessel_176",
+    "latitude": 57.75797877074825,
+    "longitude": 140.3343184681999,
+    "sog": 10.9,
+    "cog": 33.95554690822457,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:54.507474"
+  },
+  {
+    "id": 177,
+    "name": "Vessel_177",
+    "latitude": 56.685838742850564,
+    "longitude": 179.78315199552335,
+    "sog": 7.9,
+    "cog": 287.3451609030919,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:54.581644"
+  },
+  {
+    "id": 178,
+    "name": "Vessel_178",
+    "latitude": 56.95105189218244,
+    "longitude": 169.3878171350359,
+    "sog": 11.5,
+    "cog": 215.8031628150788,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:54.619567"
+  },
+  {
+    "id": 179,
+    "name": "Vessel_179",
+    "latitude": 56.53556562817592,
+    "longitude": 145.67376892941073,
+    "sog": 4.3,
+    "cog": 9.832819402267901,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:54.736261"
+  },
+  {
+    "id": 180,
+    "name": "Vessel_180",
+    "latitude": 43.77119026046501,
+    "longitude": 174.1295428013525,
+    "sog": 8.7,
+    "cog": 70.80911090924613,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:54.776061"
+  },
+  {
+    "id": 181,
+    "name": "Vessel_181",
+    "latitude": 56.91346841658254,
+    "longitude": 142.5788064114981,
+    "sog": 18.6,
+    "cog": 312.2855950226058,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:54.817420"
+  },
+  {
+    "id": 182,
+    "name": "Vessel_182",
+    "latitude": 51.29011199099507,
+    "longitude": 170.62411708004376,
+    "sog": 3.9,
+    "cog": 278.90517276660125,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:54.896239"
+  },
+  {
+    "id": 183,
+    "name": "Vessel_183",
+    "latitude": 51.0357404410647,
+    "longitude": 153.48535848416125,
+    "sog": 0.6,
+    "cog": 6.9626090189502365,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:54.936244"
+  },
+  {
+    "id": 184,
+    "name": "Vessel_184",
+    "latitude": 56.838488055335866,
+    "longitude": 145.03023813023032,
+    "sog": 7.5,
+    "cog": 109.1747240081073,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:55.135338"
+  },
+  {
+    "id": 185,
+    "name": "Vessel_185",
+    "latitude": 52.09023473005514,
+    "longitude": 169.07252200250798,
+    "sog": 10.5,
+    "cog": 229.34104413348388,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:55.171673"
+  },
+  {
+    "id": 186,
+    "name": "Vessel_186",
+    "latitude": 55.576676307669345,
+    "longitude": 163.44912350289016,
+    "sog": 2.0,
+    "cog": 281.30091083754223,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:55.246116"
+  },
+  {
+    "id": 187,
+    "name": "Vessel_187",
+    "latitude": 57.468379782402224,
+    "longitude": 175.8452579796387,
+    "sog": 10.9,
+    "cog": 281.0523124347736,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:55.285228"
+  },
+  {
+    "id": 188,
+    "name": "Vessel_188",
+    "latitude": 55.0922058778294,
+    "longitude": 165.02838457717172,
+    "sog": 8.7,
+    "cog": 192.31757624555758,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:55.326063"
+  },
+  {
+    "id": 189,
+    "name": "Vessel_189",
+    "latitude": 53.28007498142527,
+    "longitude": 151.0694951408056,
+    "sog": 14.1,
+    "cog": 167.23295633833578,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:55.364406"
+  },
+  {
+    "id": 190,
+    "name": "Vessel_190",
+    "latitude": 48.49596272500882,
+    "longitude": 163.91178714837207,
+    "sog": 17.9,
+    "cog": 38.68601775246418,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:55.641475"
+  },
+  {
+    "id": 191,
+    "name": "Vessel_191",
+    "latitude": 52.788642174482625,
+    "longitude": 149.3909464935719,
+    "sog": 15.4,
+    "cog": 185.94921436387193,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:55.683247"
+  },
+  {
+    "id": 192,
+    "name": "Vessel_192",
+    "latitude": 53.32988366371262,
+    "longitude": 179.15059523109568,
+    "sog": 19.5,
+    "cog": 297.8472243545698,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:55.725284"
+  },
+  {
+    "id": 193,
+    "name": "Vessel_193",
+    "latitude": 43.528545038545275,
+    "longitude": 174.75681987247083,
+    "sog": 12.4,
+    "cog": 243.4164156817835,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:55.888279"
+  },
+  {
+    "id": 194,
+    "name": "Vessel_194",
+    "latitude": 52.75102200012761,
+    "longitude": 178.0613726920768,
+    "sog": 15.5,
+    "cog": 83.41586387549633,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:55.959064"
+  },
+  {
+    "id": 195,
+    "name": "Vessel_195",
+    "latitude": 45.886054710101305,
+    "longitude": 169.91026329719708,
+    "sog": 4.8,
+    "cog": 116.15152317946345,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:56.001423"
+  },
+  {
+    "id": 196,
+    "name": "Vessel_196",
+    "latitude": 47.18035900648302,
+    "longitude": 159.32892344942078,
+    "sog": 9.9,
+    "cog": 59.57994319351692,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:56.077585"
+  },
+  {
+    "id": 197,
+    "name": "Vessel_197",
+    "latitude": 44.550452166294974,
+    "longitude": 164.30512004005524,
+    "sog": 4.3,
+    "cog": 328.2660609098057,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:56.113569"
+  },
+  {
+    "id": 198,
+    "name": "Vessel_198",
+    "latitude": 57.040662562529214,
+    "longitude": 173.89962448900047,
+    "sog": 18.4,
+    "cog": 155.9633228197007,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:56.231575"
+  },
+  {
+    "id": 199,
+    "name": "Vessel_199",
+    "latitude": 45.82270434618262,
+    "longitude": 139.42882055990015,
+    "sog": 9.9,
+    "cog": 315.20492317093067,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:56.278307"
+  },
+  {
+    "id": 200,
+    "name": "Vessel_200",
+    "latitude": 53.29667398793807,
+    "longitude": 153.0726100765932,
+    "sog": 15.3,
+    "cog": 217.39558063493902,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:56.443631"
+  },
+  {
+    "id": 201,
+    "name": "Vessel_201",
+    "latitude": 42.82568163499065,
+    "longitude": 166.56600673615512,
+    "sog": 7.1,
+    "cog": 354.27325027594077,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:56.480147"
+  },
+  {
+    "id": 202,
+    "name": "Vessel_202",
+    "latitude": 56.682598083031415,
+    "longitude": 167.74050661220605,
+    "sog": 9.1,
+    "cog": 151.00691068632136,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:56.553023"
+  },
+  {
+    "id": 203,
+    "name": "Vessel_203",
+    "latitude": 52.374978332610965,
+    "longitude": 148.27491049489842,
+    "sog": 0.7,
+    "cog": 165.76771983087488,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:56.589215"
+  },
+  {
+    "id": 204,
+    "name": "Vessel_204",
+    "latitude": 49.992096058060575,
+    "longitude": 174.69125550007905,
+    "sog": 10.2,
+    "cog": 233.4299510705742,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:56.779204"
+  },
+  {
+    "id": 205,
+    "name": "Vessel_205",
+    "latitude": 46.068372746639696,
+    "longitude": 172.6598381052438,
+    "sog": 4.7,
+    "cog": 34.21101422922866,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:56.815589"
+  },
+  {
+    "id": 206,
+    "name": "Vessel_206",
+    "latitude": 51.34854175171722,
+    "longitude": 147.31210897303598,
+    "sog": 19.8,
+    "cog": 250.2736575117469,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:56.852080"
+  },
+  {
+    "id": 207,
+    "name": "Vessel_207",
+    "latitude": 43.52537348482709,
+    "longitude": 174.27381956916412,
+    "sog": 1.9,
+    "cog": 250.67730498684213,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:56.889357"
+  },
+  {
+    "id": 208,
+    "name": "Vessel_208",
+    "latitude": 49.77696522353249,
+    "longitude": 141.21499351025372,
+    "sog": 20.0,
+    "cog": 91.39527699826455,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:56.928895"
+  },
+  {
+    "id": 209,
+    "name": "Vessel_209",
+    "latitude": 46.01513527590336,
+    "longitude": 163.51975719176272,
+    "sog": 18.9,
+    "cog": 145.37704643632662,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:56.966337"
+  },
+  {
+    "id": 210,
+    "name": "Vessel_210",
+    "latitude": 56.678496677677046,
+    "longitude": 139.04664267301695,
+    "sog": 8.1,
+    "cog": 222.94491415942488,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:57.003474"
+  },
+  {
+    "id": 211,
+    "name": "Vessel_211",
+    "latitude": 53.832565094361925,
+    "longitude": 149.21352367530773,
+    "sog": 15.9,
+    "cog": 165.97211408189173,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:57.040529"
+  },
+  {
+    "id": 212,
+    "name": "Vessel_212",
+    "latitude": 42.759029470214394,
+    "longitude": 134.65475729067484,
+    "sog": 11.9,
+    "cog": 244.64671851669456,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:57.149324"
+  },
+  {
+    "id": 213,
+    "name": "Vessel_213",
+    "latitude": 55.10203400216827,
+    "longitude": 147.4990570886727,
+    "sog": 18.2,
+    "cog": 356.5563408295131,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:57.261542"
+  },
+  {
+    "id": 214,
+    "name": "Vessel_214",
+    "latitude": 58.96648974222596,
+    "longitude": 176.9056028372731,
+    "sog": 7.1,
+    "cog": 63.808049688743196,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:57.299061"
+  },
+  {
+    "id": 215,
+    "name": "Vessel_215",
+    "latitude": 53.61612510937662,
+    "longitude": 153.7230037730032,
+    "sog": 0.6,
+    "cog": 270.92585520786287,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:57.336515"
+  },
+  {
+    "id": 216,
+    "name": "Vessel_216",
+    "latitude": 49.08757526049396,
+    "longitude": 158.83503490015391,
+    "sog": 15.1,
+    "cog": 148.6156768707583,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:57.412258"
+  },
+  {
+    "id": 217,
+    "name": "Vessel_217",
+    "latitude": 58.745614880162705,
+    "longitude": 149.44119417577,
+    "sog": 0.4,
+    "cog": 50.989486183130865,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:57.613582"
+  },
+  {
+    "id": 218,
+    "name": "Vessel_218",
+    "latitude": 57.83510090655102,
+    "longitude": 167.8274198354186,
+    "sog": 18.6,
+    "cog": 109.55669839317923,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:57.657001"
+  },
+  {
+    "id": 219,
+    "name": "Vessel_219",
+    "latitude": 52.67235687609393,
+    "longitude": 165.47342354692339,
+    "sog": 13.2,
+    "cog": 156.87862453065677,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:58.002594"
+  },
+  {
+    "id": 220,
+    "name": "Vessel_220",
+    "latitude": 42.5821688751971,
+    "longitude": 173.9962487883122,
+    "sog": 16.8,
+    "cog": 305.7192033167678,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:58.157889"
+  },
+  {
+    "id": 221,
+    "name": "Vessel_221",
+    "latitude": 55.086311342219176,
+    "longitude": 139.92452249431642,
+    "sog": 11.5,
+    "cog": 92.85354734615227,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:58.243262"
+  },
+  {
+    "id": 222,
+    "name": "Vessel_222",
+    "latitude": 46.48149557104106,
+    "longitude": 163.80856068125428,
+    "sog": 8.9,
+    "cog": 318.0741874834964,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:58.280200"
+  },
+  {
+    "id": 223,
+    "name": "Vessel_223",
+    "latitude": 42.53048991013832,
+    "longitude": 179.11119032564326,
+    "sog": 4.5,
+    "cog": 53.49678090330976,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:58.385769"
+  },
+  {
+    "id": 224,
+    "name": "Vessel_224",
+    "latitude": 44.90828939480447,
+    "longitude": 172.6099217333323,
+    "sog": 12.8,
+    "cog": 251.23333821366674,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:58.430678"
+  },
+  {
+    "id": 225,
+    "name": "Vessel_225",
+    "latitude": 49.56560827637916,
+    "longitude": 166.05756561472364,
+    "sog": 10.4,
+    "cog": 72.01096407713678,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:58.513348"
+  },
+  {
+    "id": 226,
+    "name": "Vessel_226",
+    "latitude": 42.81312317564654,
+    "longitude": 153.42477765095848,
+    "sog": 4.1,
+    "cog": 312.51335822795966,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:58.560870"
+  },
+  {
+    "id": 227,
+    "name": "Vessel_227",
+    "latitude": 53.14603451726886,
+    "longitude": 169.39903582416343,
+    "sog": 2.6,
+    "cog": 79.26201855427503,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:58.722903"
+  },
+  {
+    "id": 228,
+    "name": "Vessel_228",
+    "latitude": 44.54348607453044,
+    "longitude": 170.2520539398215,
+    "sog": 2.1,
+    "cog": 303.8889072105159,
+    "vessel_type": "cargo",
+    "timestamp": "2026-06-03T09:12:58.800553"
+  },
+  {
+    "id": 229,
+    "name": "Vessel_229",
+    "latitude": 49.191211321132464,
+    "longitude": 172.00736240001652,
+    "sog": 2.0,
+    "cog": 295.34997462789977,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:58.884427"
+  },
+  {
+    "id": 230,
+    "name": "Vessel_230",
+    "latitude": 47.56998992787314,
+    "longitude": 176.61766241653194,
+    "sog": 0.1,
+    "cog": 53.22844386464578,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:58.963099"
+  },
+  {
+    "id": 231,
+    "name": "Vessel_231",
+    "latitude": 54.707216624344,
+    "longitude": 174.12351938868403,
+    "sog": 1.0,
+    "cog": 167.2130798571181,
+    "vessel_type": "fishing",
+    "timestamp": "2026-06-03T09:12:59.040280"
+  },
+  {
+    "id": 232,
+    "name": "Vessel_232",
+    "latitude": 46.01731136208459,
+    "longitude": 159.37637808934542,
+    "sog": 14.2,
+    "cog": 59.345609801779325,
+    "vessel_type": "tanker",
+    "timestamp": "2026-06-03T09:12:59.195672"
+  },
+  {
+    "id": 233,
+    "name": "Vessel_233",
+    "latitude": 58.97717426738143,
+    "longitude": 142.53614360863202,
+    "sog": 4.1,
+    "cog": 263.5865576907625,
+    "vessel_type": "tug",
+    "timestamp": "2026-06-03T09:12:59.235721"
+  },
+  {
+    "id": 234,
+    "name": "Vessel_234",
+    "latitude": 55.50356647056141,
+    "longitude": 178.11891224293166,
+    "sog": 1.3,
+    "cog": 200.5427201340141,
+    "vessel_type": "passenger",
+    "timestamp": "2026-06-03T09:12:59.278454"
+  }
+]

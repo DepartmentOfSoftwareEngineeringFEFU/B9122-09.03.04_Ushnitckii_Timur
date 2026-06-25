@@ -10,11 +10,13 @@ L.Icon.Default.mergeOptions({
   shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
 });
 
-const MapComponent = ({ 
-  startPoint, endPoint, waypoints, 
-  setStartPoint, setEndPoint, setWaypoints, 
+const MapComponent = ({
+  startPoint, endPoint, waypoints,
+  setStartPoint, setEndPoint, setWaypoints,
   route, focusPoint, onClearFocus,
-  heatmapSource, 
+  heatmapSource,
+  showRiskZones, showCorridors, showTraffic,
+  dateFilter, hourFilter,
 }) => {
   const mapRef = useRef(null);
   const markersRef = useRef({ start: null, end: null, waypoints: [], currentVessels: [] });
@@ -22,80 +24,222 @@ const MapComponent = ({
   const heatLayerRef = useRef(null);
   const landLayerRef = useRef(null);
   const focusMarkerRef = useRef(null);
+  const riskZonesLayerRef = useRef(null);
+  const corridorsLayerRef = useRef(null);
+  const trafficLayerRef = useRef(null);
+
   const [heatmapData, setHeatmapData] = useState({ points: [] });
+  const [riskZones, setRiskZones] = useState([]);
+  const [corridors, setCorridors] = useState([]);
+  const [trafficData, setTrafficData] = useState([]);
 
   const loadHeatmap = async () => {
-    const url = heatmapSource === 'retrospective' 
-      ? 'http://127.0.0.1:8000/api/heatmap_data' 
+    let url = heatmapSource === 'retrospective'
+      ? 'http://127.0.0.1:8000/api/heatmap_data'
       : 'http://127.0.0.1:8000/api/current_heatmap_data';
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      setHeatmapData(data);
-    } catch (err) {
-      console.error('Ошибка загрузки тепловой карты:', err);
+
+    const params = [];
+    if (dateFilter.startDate && heatmapSource === 'retrospective') params.push(`start_date=${dateFilter.startDate}`);
+    if (dateFilter.endDate && heatmapSource === 'retrospective') params.push(`end_date=${dateFilter.endDate}`);
+    if (hourFilter !== null && heatmapSource === 'retrospective') {
+      params.push(`start_hour=${hourFilter}`);
+      params.push(`end_hour=${hourFilter}`);
     }
+
+    if (params.length > 0) url += '?' + params.join('&');
+
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+      setHeatmapData(data);
+    } catch (err) { console.error('Ошибка heatmap:', err); }
   };
 
-  useEffect(() => {
-    if (!mapRef.current) return;
-    if (heatLayerRef.current) mapRef.current.removeLayer(heatLayerRef.current);
-    if (heatmapData.points && heatmapData.points.length) {
-      const points = heatmapData.points.map(p => [p[0], p[1], p[2]]);
-      heatLayerRef.current = L.heatLayer(points, {
-        radius: 15,
-        blur: 10,
-        maxZoom: 10,
-        minOpacity: 0.3,
-        gradient: { 0.2: 'blue', 0.4: 'lime', 0.6: 'yellow', 0.8: 'orange', 1: 'red' }
-      }).addTo(mapRef.current);
-    }
-  }, [heatmapData]);
+  const loadRiskZones = async () => {
+    try {
+      const res = await fetch('http://127.0.0.1:8000/api/risk_zones');
+      const data = await res.json();
+      console.log('📍 Зоны риска:', data.zones);
+      setRiskZones(data.zones || []);
+    } catch (err) { console.error('Ошибка risk zones:', err); }
+  };
 
+  const loadCorridors = async () => {
+    try {
+      const res = await fetch('http://127.0.0.1:8000/api/maritime_corridors');
+      const data = await res.json();
+      console.log('🛣️ Коридоры:', data.corridors);
+      setCorridors(data.corridors || []);
+    } catch (err) { console.error('Ошибка corridors:', err); }
+  };
+
+  const loadTraffic = async () => {
+  try {
+    let url = 'http://127.0.0.1:8000/api/traffic_density';
+    const params = [];
+
+    // Убираем фильтрацию по датам, так как таблица уже агрегирована по часам
+    // Добавляем только фильтр по часу
+    if (hourFilter !== null) params.push(`hour=${hourFilter}`);
+
+    if (params.length > 0) url += '?' + params.join('&');
+
+    const res = await fetch(url);
+    const data = await res.json();
+    setTrafficData(data.traffic || []);
+  } catch (err) { console.error('Ошибка traffic:', err); }
+};
+
+  // Инициализация карты
   useEffect(() => {
     if (!mapRef.current) {
       mapRef.current = L.map('map', { attributionControl: false }).setView([55.0, 150.0], 5);
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: ''
-      }).addTo(mapRef.current);
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution: '' }).addTo(mapRef.current);
+
+      fetch('http://127.0.0.1:8000/api/russia_border.geojson')
+        .then(r => r.json())
+        .then(data => {
+          landLayerRef.current = L.geoJSON(data, {
+            style: {
+              color: '#1a1a1a',
+              weight: 1.5,
+              fillColor: '#c8e6c9',
+              fillOpacity: 0.6
+            },
+            filter: (feature) => {
+              const name = feature.properties?.name || '';
+              return name.toLowerCase().includes('russia') ||
+                     feature.properties?.['ISO3166-1-Alpha-2'] === 'RU';
+            }
+          }).addTo(mapRef.current);
+        });
     }
 
-    fetch('http://127.0.0.1:8000/api/land.geojson')
-      .then(response => response.json())
-      .then(data => {
-        if (landLayerRef.current) mapRef.current.removeLayer(landLayerRef.current);
-        landLayerRef.current = L.geoJSON(data, {
-          style: { color: '#555', weight: 1, fillColor: '#8B5A2B', fillOpacity: 0.5 },
-          onEachFeature: (feature, layer) => layer.bindPopup('Суша')
-        }).addTo(mapRef.current);
-      })
-      .catch(err => console.error('Ошибка загрузки береговой линии:', err));
-
-    const loadCurrentVessels = () => {
-      fetch('http://127.0.0.1:8000/api/current_vessels')
-        .then(response => response.json())
-        .then(data => {
-          markersRef.current.currentVessels.forEach(m => mapRef.current.removeLayer(m));
-          markersRef.current.currentVessels = [];
-          data.vessels.forEach(vessel => {
-            const popup = `<b>${vessel.name}</b><br/>Тип: ${vessel.vessel_type}<br/>Скорость: ${vessel.sog} узлов<br/>Курс: ${vessel.cog.toFixed(0)}°<br/>Время: ${new Date(vessel.timestamp).toLocaleString()}`;
-            const marker = L.marker([vessel.latitude, vessel.longitude], {
-              icon: L.divIcon({ className: 'vessel-marker', html: '🚢', iconSize: [20, 20] })
-            }).addTo(mapRef.current).bindPopup(popup);
-            markersRef.current.currentVessels.push(marker);
-          });
-        })
-        .catch(err => console.error('Ошибка загрузки текущих судов:', err));
-    };
-    loadCurrentVessels();
-    const interval = setInterval(loadCurrentVessels, 30000);
-    return () => clearInterval(interval);
+    loadHeatmap();
+    loadRiskZones();
+    loadCorridors();
+    loadTraffic();
   }, []);
 
+  // Обновление тепловой карты при изменении фильтров
   useEffect(() => {
     loadHeatmap();
-  }, [heatmapSource]);
+  }, [dateFilter, hourFilter, heatmapSource]);
 
+  // ⚠️ ИСПРАВЛЕНО: Обновление трафика при изменении И ДАТЫ, И ЧАСА
+  useEffect(() => {
+    loadTraffic();
+  }, [dateFilter, hourFilter]); // ← ДОБАВЛЕН dateFilter
+
+  // Обновление слоёв
+  useEffect(() => {
+    if (!mapRef.current) return;
+
+    // Тепловая карта
+    if (heatLayerRef.current) mapRef.current.removeLayer(heatLayerRef.current);
+    if (heatmapData.points && heatmapData.points.length) {
+      const maxI = Math.max(...heatmapData.points.map(p => p[2]));
+      const points = heatmapData.points.map(p => [p[0], p[1], maxI > 0 ? p[2] / maxI : 0]);
+      heatLayerRef.current = L.heatLayer(points, { radius: 25, blur: 20, maxZoom: 12, minOpacity: 0.4, gradient: { 0.0: 'blue', 0.25: 'cyan', 0.5: 'lime', 0.75: 'yellow', 1.0: 'red' } }).addTo(mapRef.current);
+    }
+
+    // Зоны риска
+    if (riskZonesLayerRef.current) mapRef.current.removeLayer(riskZonesLayerRef.current);
+    if (showRiskZones && riskZones.length > 0) {
+      const group = L.layerGroup();
+      riskZones.forEach(zone => {
+        const displayRadius = Math.min(zone.radius_km, 100) * 1000;
+
+        L.circle([zone.center.lat, zone.center.lon], {
+          radius: displayRadius,
+          color: 'red',
+          fillColor: '#f03',
+          fillOpacity: 0.2,
+          weight: 2,
+          dashArray: '5, 5'
+        }).bindPopup(`
+          <b>Зона риска #${zone.id}</b><br/>
+          Риск: ${zone.avg_risk_score?.toFixed(2)}<br/>
+          Точек: ${zone.points_count}<br/>
+          Радиус: ${zone.radius_km?.toFixed(1)} км
+        `).addTo(group);
+      });
+      riskZonesLayerRef.current = group.addTo(mapRef.current);
+    }
+
+    // Коридоры
+    if (corridorsLayerRef.current) mapRef.current.removeLayer(corridorsLayerRef.current);
+    if (showCorridors && corridors.length > 0) {
+      const group = L.layerGroup();
+      corridors.forEach(c => {
+        L.circle([c.center.lat, c.center.lon], {
+          radius: (c.width_km / 2) * 1000,
+          color: 'blue',
+          fillColor: '#00f',
+          fillOpacity: 0.15,
+          weight: 2,
+          dashArray: '5, 5'
+        }).bindPopup(`
+          <b>Морской коридор #${c.id}</b><br/>
+          Трафик: ${c.traffic_count} судов<br/>
+          Ср. скорость: ${c.avg_speed?.toFixed(1)} уз.
+        `).addTo(group);
+      });
+      corridorsLayerRef.current = group.addTo(mapRef.current);
+    }
+
+    // Трафик
+    if (trafficLayerRef.current) mapRef.current.removeLayer(trafficLayerRef.current);
+    if (showTraffic && trafficData.length > 0) {
+      const group = L.layerGroup();
+      const maxVessels = Math.max(...trafficData.map(t => t.vessel_count), 1);
+      trafficData.forEach(t => {
+        const intensity = t.vessel_count / maxVessels;
+        L.circleMarker([t.center.lat, t.center.lon], {
+          radius: 5 + intensity * 10,
+          color: 'orange',
+          fillColor: '#f80',
+          fillOpacity: 0.6,
+          weight: 1
+        }).bindPopup(`
+          <b>Трафик (${t.hour_of_day}:00)</b><br/>
+          Судов: ${t.vessel_count}
+        `).addTo(group);
+      });
+      trafficLayerRef.current = group.addTo(mapRef.current);
+    }
+  }, [heatmapData, riskZones, corridors, trafficData, showRiskZones, showCorridors, showTraffic]);
+
+  // Маршрут
+  useEffect(() => {
+    if (!mapRef.current) return;
+    if (routeLayerRef.current) mapRef.current.removeLayer(routeLayerRef.current);
+
+    if (route && route.segments && route.segments.length) {
+      const group = L.layerGroup();
+      for (let i = 0; i < route.segments.length; i++) {
+        const seg = route.segments[i];
+        const line = L.polyline([[seg.start.lat, seg.start.lon], [seg.end.lat, seg.end.lon]], { color: '#1e3a8a', weight: 5 });
+
+        const weatherInfo = seg.weather && seg.weather.wind_speed
+          ? `<br/>Ветер: ${seg.weather.wind_speed.toFixed(1)} м/с<br/> Волна: ${seg.weather.wave_height.toFixed(1)} м`
+          : '';
+
+        const tooltipContent = `
+          Скорость: ${seg.recommended_speed_knots?.toFixed(1)} уз.<br/>
+          Риск: ${seg.risk_level?.toFixed(2)}<br/>
+          Расст.: ${seg.distance_km?.toFixed(1)} км
+          ${weatherInfo}
+        `;
+        line.bindTooltip(tooltipContent, { permanent: false, direction: 'center', offset: [0, -10] });
+        group.addLayer(line);
+      }
+      routeLayerRef.current = group.addTo(mapRef.current);
+      mapRef.current.fitBounds(L.latLngBounds(route.segments.flatMap(s => [[s.start.lat, s.start.lon], [s.end.lat, s.end.lon]])));
+    }
+  }, [route]);
+
+  // Клик по карте
   useEffect(() => {
     if (!mapRef.current) return;
     const handleMapClick = (e) => {
@@ -107,6 +251,32 @@ const MapComponent = ({
     return () => mapRef.current?.off('click', handleMapClick);
   }, [startPoint, endPoint, setStartPoint, setEndPoint, setWaypoints]);
 
+  // Маркеры
+  useEffect(() => {
+    if (!mapRef.current) return;
+    if (markersRef.current.start) mapRef.current.removeLayer(markersRef.current.start);
+    if (startPoint) {
+      markersRef.current.start = L.marker(startPoint, { draggable: true }).addTo(mapRef.current).bindPopup('Старт').openPopup();
+      markersRef.current.start.on('dragend', (e) => setStartPoint(e.target.getLatLng()));
+    }
+    if (markersRef.current.end) mapRef.current.removeLayer(markersRef.current.end);
+    if (endPoint) {
+      markersRef.current.end = L.marker(endPoint, { draggable: true }).addTo(mapRef.current).bindPopup('Финиш');
+      markersRef.current.end.on('dragend', (e) => setEndPoint(e.target.getLatLng()));
+    }
+    markersRef.current.waypoints.forEach(m => mapRef.current.removeLayer(m));
+    markersRef.current.waypoints = [];
+    waypoints.forEach((wp, idx) => {
+      const m = L.marker(wp, { draggable: true }).addTo(mapRef.current).bindPopup(`Точка ${idx+1}`);
+      m.on('dragend', (e) => {
+        const newPos = e.target.getLatLng();
+        setWaypoints(prev => prev.map((p, i) => i === idx ? newPos : p));
+      });
+      markersRef.current.waypoints.push(m);
+    });
+  }, [startPoint, endPoint, waypoints, setStartPoint, setEndPoint, setWaypoints]);
+
+  // Фокус на точке
   useEffect(() => {
     if (!mapRef.current) return;
     if (focusPoint) {
@@ -120,66 +290,6 @@ const MapComponent = ({
       focusMarkerRef.current = null;
     }
   }, [focusPoint]);
-
-  useEffect(() => {
-    if (!mapRef.current) return;
-    if (markersRef.current.start) mapRef.current.removeLayer(markersRef.current.start);
-    if (startPoint) {
-      markersRef.current.start = L.marker(startPoint, { draggable: true }).addTo(mapRef.current).bindPopup('Старт').openPopup();
-      markersRef.current.start.on('dragend', (e) => setStartPoint(e.target.getLatLng()));
-    } else markersRef.current.start = null;
-    if (markersRef.current.end) mapRef.current.removeLayer(markersRef.current.end);
-    if (endPoint) {
-      markersRef.current.end = L.marker(endPoint, { draggable: true }).addTo(mapRef.current).bindPopup('Финиш');
-      markersRef.current.end.on('dragend', (e) => setEndPoint(e.target.getLatLng()));
-    } else markersRef.current.end = null;
-    markersRef.current.waypoints.forEach(m => mapRef.current.removeLayer(m));
-    markersRef.current.waypoints = [];
-    waypoints.forEach((wp, idx) => {
-      const m = L.marker(wp, { draggable: true, color: 'orange' }).addTo(mapRef.current).bindPopup(`Точка ${idx+1}`);
-      m.on('dragend', (e) => {
-        const newPos = e.target.getLatLng();
-        setWaypoints(prev => prev.map((p, i) => i === idx ? newPos : p));
-      });
-      markersRef.current.waypoints.push(m);
-    });
-  }, [startPoint, endPoint, waypoints, setStartPoint, setEndPoint, setWaypoints]);
-
-  // Отрисовка маршрута с отдельными тултипами для каждого сегмента
-  useEffect(() => {
-    if (!mapRef.current) return;
-    if (routeLayerRef.current) {
-      mapRef.current.removeLayer(routeLayerRef.current);
-      routeLayerRef.current = null;
-    }
-    if (route && route.segments && route.segments.length) {
-      const group = L.layerGroup();
-      for (let i = 0; i < route.segments.length; i++) {
-        const seg = route.segments[i];
-        const startLatLng = [seg.start.lat, seg.start.lon];
-        const endLatLng = [seg.end.lat, seg.end.lon];
-        const line = L.polyline([startLatLng, endLatLng], { color: '#1e3a8a', weight: 5 });
-        const midLat = (seg.start.lat + seg.end.lat) / 2;
-        const midLon = (seg.start.lon + seg.end.lon) / 2;
-        const tooltipContent = `
-          Скорость: ${seg.recommended_speed_knots?.toFixed(1)} узлов<br/>
-          Курс: ${seg.course_deg?.toFixed(0)}°<br/>
-          Риск: ${seg.risk_level?.toFixed(2) || '0.00'}<br/>
-          Расстояние: ${seg.distance_km?.toFixed(1)} км
-        `;
-        const tooltip = L.tooltip({ permanent: false, direction: 'center', offset: [0, -10] })
-          .setContent(tooltipContent)
-          .setLatLng([midLat, midLon]);
-        line.bindTooltip(tooltip);
-        group.addLayer(line);
-      }
-      group.addTo(mapRef.current);
-      routeLayerRef.current = group;
-      // Фокусируем карту на маршруте
-      const bounds = L.latLngBounds(route.segments.flatMap(s => [[s.start.lat, s.start.lon], [s.end.lat, s.end.lon]]));
-      mapRef.current.fitBounds(bounds);
-    }
-  }, [route]);
 
   return <div id="map" style={{ height: '100%', width: '100%' }} />;
 };

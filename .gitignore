@@ -1,0 +1,35 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Node.js / React
+frontend-react/node_modules/
+frontend-react/build/
+frontend-react/.env.local
+
+# Данные (исключаем большие файлы, но оставляем sample)
+data/*.parquet
+data/*.pkl
+data/*.geojson
+!data/*.sample.geojson
+
+# Конфиги с секретами
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Логи
+*.log

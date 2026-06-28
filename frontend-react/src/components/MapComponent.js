@@ -71,6 +71,40 @@ const MapComponent = ({
     } catch (err) { console.error('Ошибка corridors:', err); }
   };
 
+  const loadCurrentVessels = () => {
+  fetch('http://127.0.0.1:8000/api/current_vessels')
+    .then(response => response.json())
+    .then(data => {
+      // Удаляем старые маркеры
+      markersRef.current.currentVessels.forEach(m => mapRef.current.removeLayer(m));
+      markersRef.current.currentVessels = [];
+      data.vessels.forEach(vessel => {
+        const popupContent = `
+          <b>${vessel.name}</b><br/>
+          Тип: ${vessel.vessel_type}<br/>
+          Скорость: ${vessel.sog} узлов<br/>
+          Курс: ${vessel.cog.toFixed(0)}°<br/>
+          Время: ${new Date(vessel.timestamp).toLocaleString()}
+        `;
+        // Иконка с эмодзи 🚢
+        const icon = L.divIcon({
+          className: 'vessel-marker',
+          html: '🚢',
+          iconSize: [20, 20],
+          iconAnchor: [10, 10]
+        });
+        const marker = L.marker([vessel.latitude, vessel.longitude], { icon })
+          .addTo(mapRef.current)
+          .bindPopup(popupContent);
+        markersRef.current.currentVessels.push(marker);
+      });
+
+    })
+    .catch(err => console.error('Ошибка загрузки текущих судов:', err));
+
+
+};
+
   const loadTraffic = async () => {
   try {
     let url = 'http://127.0.0.1:8000/api/traffic_density';
@@ -111,7 +145,7 @@ const MapComponent = ({
           }).addTo(mapRef.current);
         });
     }
-
+    loadCurrentVessels();
     loadHeatmap();
     loadRiskZones();
     loadCorridors();

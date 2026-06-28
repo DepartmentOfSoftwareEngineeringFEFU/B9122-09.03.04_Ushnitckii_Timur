@@ -33,7 +33,7 @@ DATA_DIR = "data"
 HISTORICAL_DATA_FILE = os.path.join(DATA_DIR, "historical_enriched.parquet")
 RISK_ZONES_FILE = os.path.join(DATA_DIR, "risk_zones.json")
 CURRENT_VESSELS_FILE = os.path.join(DATA_DIR, "current_vessels.json")
-TRAFFIC_DENSITY_FILE = os.path.join(DATA_DIR, "traffic_density.parquet")  # если есть
+TRAFFIC_DENSITY_FILE = os.path.join(DATA_DIR, "traffic_density.json")  # если есть
 MARITIME_CORRIDORS_FILE = os.path.join(DATA_DIR, "maritime_corridors.json")
 
 # PostgreSQL (если USE_DATABASE = True)

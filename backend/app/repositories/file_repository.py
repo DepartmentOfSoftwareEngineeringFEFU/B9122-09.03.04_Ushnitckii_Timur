@@ -31,21 +31,17 @@ class FileRepository:
         try:
             self.historical_df = pd.read_parquet(HISTORICAL_DATA_FILE)
             print(f"✅ Загружено {len(self.historical_df)} исторических записей")
-
-            # Убеждаемся, что колонка timestamp существует
             if 'timestamp' not in self.historical_df.columns:
                 if 'base_date_time' in self.historical_df.columns:
                     self.historical_df['timestamp'] = pd.to_datetime(self.historical_df['base_date_time'])
                     print("✅ Добавлена колонка timestamp из base_date_time")
                 else:
                     print("⚠️ Колонка timestamp не найдена, фильтрация по дате будет недоступна")
-                    # Создаём фиктивный timestamp, чтобы не падать
-                    self.historical_df['timestamp'] = pd.NaT
         except Exception as e:
             print(f"❌ Ошибка загрузки исторических данных: {e}")
             self.historical_df = pd.DataFrame()
 
-        # Загрузка зон риска с преобразованием формата
+        # Загрузка зон риска
         try:
             with open(RISK_ZONES_FILE, 'r') as f:
                 raw_zones = json.load(f)
@@ -88,6 +84,20 @@ class FileRepository:
             print(f"❌ Ошибка загрузки текущих судов: {e}")
             self.current_vessels = []
 
+        # Загрузка трафика (если есть)
+        try:
+            traffic_file = Path(TRAFFIC_DENSITY_FILE)
+            if traffic_file.exists():
+                with open(traffic_file, 'r') as f:
+                    self.traffic_density = json.load(f)
+                print(f"✅ Загружено {len(self.traffic_density)} точек трафика из {traffic_file.absolute()}")
+            else:
+                print(f"⚠️ Файл {TRAFFIC_DENSITY_FILE} не найден, трафик будет агрегироваться на лету")
+                self.traffic_density = []
+        except Exception as e:
+            print(f"❌ Ошибка загрузки трафика: {e}")
+            self.traffic_density = []
+
         # Загрузка морских коридоров (если есть)
         try:
             with open(MARITIME_CORRIDORS_FILE, 'r') as f:
@@ -116,51 +126,72 @@ class FileRepository:
             self.kdtree = KDTree(coords, metric='euclidean')
 
     def get_heatmap_data(
-        self,
-        source: str = "retrospective",
-        grid_size: float = 0.1,
-        start_date: Optional[str] = None,
-        end_date: Optional[str] = None,
-        start_hour: Optional[int] = None,
-        end_hour: Optional[int] = None
+            self,
+            source: str = "retrospective",
+            grid_size: float = 0.1,
+            start_date: Optional[str] = None,
+            end_date: Optional[str] = None,
+            start_hour: Optional[int] = None,
+            end_hour: Optional[int] = None
     ) -> List[List]:
-        if self.historical_df.empty:
-            return []
-
-        df = self.historical_df.copy()
-        print(f"📊 Фильтр: start_date={start_date}, end_date={end_date}, start_hour={start_hour}, end_hour={end_hour}")
-
-        # Фильтрация по дате
-        if 'timestamp' in df.columns and not df['timestamp'].isna().all():
-            if start_date:
-                df = df[df['timestamp'] >= pd.to_datetime(start_date)]
-            if end_date:
-                df = df[df['timestamp'] <= pd.to_datetime(end_date) + pd.Timedelta(days=1)]
-            if start_hour is not None:
-                df = df[df['timestamp'].dt.hour >= start_hour]
-            if end_hour is not None:
-                df = df[df['timestamp'].dt.hour <= end_hour]
+        if source == "current_vessels":
+            # Используем current_vessels
+            if not self.current_vessels:
+                return []
+            df = pd.DataFrame(self.current_vessels)
+            if df.empty:
+                return []
+            # Агрегация по ячейкам
+            lat_round = np.round(df['latitude'] / grid_size) * grid_size
+            lon_round = np.round(df['longitude'] / grid_size) * grid_size
+            grouped = df.groupby([lat_round, lon_round]).size().reset_index(name='intensity')
+            points = [[row['lat_round'], row['lon_round'], row['intensity']] for _, row in grouped.iterrows()]
+            # Нормализация
+            if points:
+                max_intensity = max(p[2] for p in points)
+                if max_intensity > 0:
+                    points = [[p[0], p[1], p[2] / max_intensity] for p in points]
+            return points
         else:
-            print("⚠️ Нет колонки timestamp или все значения NaN – фильтрация по времени пропущена")
+            # Ретроспективные данные (история)
+            if self.historical_df.empty:
+                return []
 
-        if df.empty:
-            print("⚠️ После фильтрации данных не осталось")
-            return []
+            df = self.historical_df.copy()
+            print(
+                f"📊 Фильтр: start_date={start_date}, end_date={end_date}, start_hour={start_hour}, end_hour={end_hour}")
 
-        # Агрегация по ячейкам
-        lat_round = np.round(df['latitude'] / grid_size) * grid_size
-        lon_round = np.round(df['longitude'] / grid_size) * grid_size
-        grouped = df.groupby([lat_round, lon_round]).agg(
-            intensity=('risk_score', 'mean')
-        ).reset_index()
-        points = [[row[0], row[1], row[2]] for row in grouped.values]
+            # Фильтрация по дате
+            if 'timestamp' in df.columns and not df['timestamp'].isna().all():
+                if start_date:
+                    df = df[df['timestamp'] >= pd.to_datetime(start_date)]
+                if end_date:
+                    df = df[df['timestamp'] <= pd.to_datetime(end_date) + pd.Timedelta(days=1)]
+                if start_hour is not None:
+                    df = df[df['timestamp'].dt.hour >= start_hour]
+                if end_hour is not None:
+                    df = df[df['timestamp'].dt.hour <= end_hour]
+            else:
+                print("⚠️ Нет колонки timestamp или все значения NaN – фильтрация по времени пропущена")
 
-        if points:
-            max_intensity = max(p[2] for p in points)
-            if max_intensity > 0:
-                points = [[p[0], p[1], p[2] / max_intensity] for p in points]
-        print(f"📊 Тепловая карта: {len(points)} точек")
-        return points
+            if df.empty:
+                print("⚠️ После фильтрации данных не осталось")
+                return []
+
+            # Агрегация по ячейкам
+            lat_round = np.round(df['latitude'] / grid_size) * grid_size
+            lon_round = np.round(df['longitude'] / grid_size) * grid_size
+            grouped = df.groupby([lat_round, lon_round]).agg(
+                intensity=('risk_score', 'mean')
+            ).reset_index()
+            points = [[row[0], row[1], row[2]] for row in grouped.values]
+
+            if points:
+                max_intensity = max(p[2] for p in points)
+                if max_intensity > 0:
+                    points = [[p[0], p[1], p[2] / max_intensity] for p in points]
+            print(f"📊 Тепловая карта: {len(points)} точек")
+            return points
 
     def get_risk_zones(self) -> List[Dict]:
         return self.risk_zones
@@ -169,18 +200,24 @@ class FileRepository:
         return self.maritime_corridors
 
     def get_traffic_density(
-        self,
-        hour: Optional[int] = None,
-        start_date: Optional[str] = None,
-        end_date: Optional[str] = None
+            self,
+            hour: Optional[int] = None,
+            start_date: Optional[str] = None,
+            end_date: Optional[str] = None
     ) -> List[Dict]:
-        """Агрегация плотности трафика из исторических данных"""
+        """Возвращает плотность трафика из файла или агрегирует на лету"""
+        if self.traffic_density:
+            result = self.traffic_density
+            if hour is not None:
+                result = [r for r in result if r.get('hour') == hour]
+            return result
+
         if self.historical_df.empty:
             return []
 
         df = self.historical_df.copy()
 
-        # Фильтрация по дате и часу
+        # Фильтрация по дате (если есть timestamp)
         if 'timestamp' in df.columns and not df['timestamp'].isna().all():
             if start_date:
                 df = df[df['timestamp'] >= pd.to_datetime(start_date)]
@@ -188,47 +225,42 @@ class FileRepository:
                 df = df[df['timestamp'] <= pd.to_datetime(end_date) + pd.Timedelta(days=1)]
             if hour is not None:
                 df = df[df['timestamp'].dt.hour == hour]
+            else:
+                df['hour'] = df['timestamp'].dt.hour
         else:
-            print("⚠️ Нет колонки timestamp – фильтрация по времени пропущена")
+            if hour is not None:
+                print("⚠️ Нет timestamp для фильтрации по часу")
+            df['hour'] = 0
 
-        if df.empty:
-            return []
-
-        # Агрегация по ячейкам 0.1° и часам
+        # Агрегация по ячейкам 0.1° и часу
         lat_round = np.round(df['latitude'] / 0.1) * 0.1
         lon_round = np.round(df['longitude'] / 0.1) * 0.1
 
-        # Добавим час, если есть timestamp
-        if 'timestamp' in df.columns and not df['timestamp'].isna().all():
-            df['hour'] = df['timestamp'].dt.hour
-            grouped = df.groupby([lat_round, lon_round, 'hour']).agg(
-                vessel_count=('sog', 'count'),
-                avg_speed=('sog', 'mean')
-            ).reset_index()
-            traffic = []
-            for _, row in grouped.iterrows():
-                traffic.append({
-                    "lat": float(row['lat_round']),
-                    "lon": float(row['lon_round']),
-                    "intensity": int(row['vessel_count']),
-                    "hour": int(row['hour']),
-                    "date": None  # дата не сохраняется в агрегации
-                })
-        else:
-            grouped = df.groupby([lat_round, lon_round]).agg(
-                vessel_count=('sog', 'count'),
-                avg_speed=('sog', 'mean')
-            ).reset_index()
-            traffic = []
-            for _, row in grouped.iterrows():
-                traffic.append({
-                    "lat": float(row['lat_round']),
-                    "lon": float(row['lon_round']),
-                    "intensity": int(row['vessel_count']),
-                    "hour": None,
-                    "date": None
-                })
+        grouped = df.groupby([lat_round, lon_round, 'hour']).agg(
+            vessel_count=('sog', 'count'),
+            avg_speed=('sog', 'mean')
+        ).reset_index()
+
+        # Переименуем столбцы для ясности
+        grouped.rename(columns={
+            'lat_round': 'lat',
+            'lon_round': 'lon',
+            'hour': 'hour',
+            'vessel_count': 'vessel_count',
+            'avg_speed': 'avg_speed'
+        }, inplace=True)
+
+        traffic = []
+        for _, row in grouped.iterrows():
+            traffic.append({
+                "lat": float(row['lat']),
+                "lon": float(row['lon']),
+                "intensity": int(row['vessel_count']),
+                "hour": int(row['hour']),
+                "date": None
+            })
         return traffic
+
 
     def get_current_vessels(self) -> List[Dict]:
         return self.current_vessels

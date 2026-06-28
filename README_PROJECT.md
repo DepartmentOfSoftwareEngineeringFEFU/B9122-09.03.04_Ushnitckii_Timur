@@ -11,14 +11,22 @@
    npm install
 
 2. Сгенерируйте синтетические данные и обучите ML-модели:
-python train.py
-
+   ```bash
+   *в отдельной консольке*
+   cd backend
+   python train.py
+   python generate_current_vessels.py  # текущие суда (50 шт.)
+   python generate_traffic.py          # плотность трафика (traffic_density.json)
+   python generate_corridors.py        # морские коридоры (maritime_corridors.json)
+ы
 3. Запустите бэкенд:
-python -m uvicorn app.main:app --reload
+   ```bash
+   python -m uvicorn app.main:app --reload
 
 4. Запустите фронтенд (в отдельном терминале):
-cd frontend-react
-npm start
+   ```bash
+   cd frontend-react
+   npm start
 
 5. Откройте http://localhost:3000 в браузере.
 
